@@ -59,6 +59,11 @@ export let eggs = #{
         main_file: "config.ini",
       },
     picom: #{enabled: true, strategy: "put", targets: "~/.config/picom", main_file: "picom.conf" },
-    rofi: #{enabled: true, strategy: "put", targets: "~/.config/rofi", main_file: "config.rasi" },
+    rofi: #{
+      enabled: true,
+      strategy: "put",
+      templates: ["shared/colors.rasi"],
+      targets: "~/.config/rofi",
+      main_file: "config.rasi" },
     sxhkd: #{enabled: true, strategy: "put", targets: "~/.config/sxhkd", main_file: "sxhkdrc" },
   };

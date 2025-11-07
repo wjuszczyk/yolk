@@ -36,6 +36,9 @@ super + Escape
 ctr + alt + l
   i3lock-fancy -f IBM-Plex-Mono -- maim
 
+super + q 
+  rofi_powermenu
+
 # Rofi Menus/Applets
 #super + {b,m,n,r,s,w,x}
 #	{rofi_bluetooth,bspmusic,nmd,rofi_asroot,rofi_screenshot,rofi_windows,rofi_powermenu}

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+export MPD_HOST="$XDG_RUNTIME_DIR/socket"
 
 CONFIG="$HOME/.config/kitty/kitty.conf"
 
