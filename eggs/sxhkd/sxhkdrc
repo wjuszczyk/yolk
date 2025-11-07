@@ -1,0 +1,203 @@
+## ---------- Apps ----------
+
+# terminal emulators
+super + x
+	xterm
+
+super + Return
+	kitty.sh
+
+super + shift + Return
+  kitty.sh --float
+
+super + alt + Return
+  kitty.sh --full
+
+super + grave
+    tdrop -m -x 0 -y 0 -w 100% -h 1080 --class=kittyd --wm=bspwm kitty -c $HOME/.config/kitty/kitty.conf --class kittyd --override 'background_opacity=0.9'
+
+# jgmenu
+alt + F1
+	~/bin/jgmenu_create.sh >/dev/null 2>&1 &
+
+# apps
+super + {p,f}
+  {pcmanfm,floorp}
+
+# program launcher
+super + @space
+    dmenu.sh
+        
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# lock screen
+ctr + alt + l
+  i3lock-fancy -f IBM-Plex-Mono -- maim
+
+# Rofi Menus/Applets
+#super + {b,m,n,r,s,w,x}
+#	{rofi_bluetooth,bspmusic,nmd,rofi_asroot,rofi_screenshot,rofi_windows,rofi_powermenu}
+
+super + m
+  kitty.sh --full ncmpcpp
+
+# kill window
+ctrl + alt + Escape
+    xkill
+
+## ---------- BSPWM ----------
+
+# quit/restart bspwm
+super + shift + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+super + {_,shift + }c
+	bspc node -{c,k}
+
+# close and return to last desktop
+#super + ctrl + c
+#    bspc node -c && bspc desktop -f last
+
+# alternate between the tiled and monocle layout
+super + l
+	bspc desktop -l next
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# set the window state
+super + {t,shift + t,s,shift + f}
+	bspc node -t "~"{tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Hide/Unhide Window
+#super + shift + h
+#	bspwinmask
+
+#
+# focus/swap
+#
+
+# change focus
+super + {Left,Right,Up,Down}
+    bspc node -f {west,east,north,south}
+
+# move window
+super + shift + {Left,Down,Up,Right}
+    bspc node -s {west,south,north,east}
+
+# focus the next/previous desktop in the current monitor
+super + {Next, Prior}
+  bspc desktop -f {prev.local,next.local}
+ 
+# focus the last node/desktop
+super + Tab
+	bspc node -f last
+
+# Switch workspace or Send focused Node to another workspace
+super + {_,shift + }{1-6}
+	bspc {desktop -f,node -d} '^{1-6}' '--follow'
+
+# Send focused Node to workspace directionally
+super + ctrl + shift + {Left,Right}
+	bspc node -d {prev,next} '--follow'
+
+# move window to other monitor
+#super + alt + {Left,Right}
+#    bspc node -m {west,east} --follow
+
+# Swith to left/right monitor
+#super + {comma,period}
+#    bspc monitor -f {west,east}
+
+#
+# preselect
+#
+
+# preselect the direction
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + alt + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+# Split horizontal, vertical or cancel
+#super + {h,v,q}
+#   bspc node -p {east,south,cancel}
+
+#
+# move/resize
+#
+
+# Expanding windows
+super + control + Left
+    bspc node -z left -20 0 || bspc node -z right -20 0
+super + control + Right
+    bspc node -z right 20 0 || bspc node -z left 20 0
+super + control + Up
+    bspc node -z top 0 -20 || bspc node -z bottom 0 -20
+super + control + Down
+    bspc node -z top 0 20 || bspc node -z bottom 0 20
+
+# Move floating windows
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# refresh window
+super + shift + a
+    bspc node -t floating; sleep 0.1; bspc node -t tiled
+
+## ---------- Screenshot ----------
+
+# Take a screenshot
+Print
+	maim | tee ~/Obrazy/Screenshot_$(date +%F_%r).png | xclip -selection clipboard -t image/png
+
+# Take screenshot in 5 second
+#alt + Print
+#	bspscreenshot --in5
+
+# Take screenshot in 10 second
+#shift + Print
+#	bspscreenshot --in10
+
+# Take screenshot of active window
+#ctrl + Print
+#	bspscreenshot --win
+
+# Take screenshot of area
+super + Print
+	maim -s | tee ~/Obrazy/Screenshot_$(date +%F_%r).png | xclip -selection clipboard -t image/png
+
+## ---------- Audio ----------
+
+XF86Audio{Next,Prev,Play,Stop}
+  playerctl {next,previous,play-pause,stop}
+
+# Speaker Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	bspvolume{ --inc, --dec}
+
+# Mic Volume control
+XF86Audio{Mute,MicMute}
+	bspvolume{ --toggle, --toggle-mic}

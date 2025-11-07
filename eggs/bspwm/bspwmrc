@@ -1,0 +1,91 @@
+#!/bin/bash
+BSPDIR="$HOME/.config/bspwm"
+export PATH="${PATH}:$BSPDIR/scripts"
+export XDG_CURRENT_DESKTOP='bspwm'
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# {# replace_color(theme.colors.fr) #}
+FOCUSED_BORDER='#F0C674'
+# {# replace_color(theme.colors.bg) #}
+NORMAL_BORDER_BORDER='#282A2E'
+# {# replace_color(theme.colors.bg) #}
+ACTIVE_BORDER='#282A2E'
+# {# replace_color(theme.colors.fr) #}
+PRESEL_FEEDBACK='#F0C674'
+
+## Bspwm appearance
+BORDER_WIDTH='1'
+WINDOW_GAP='5'
+SPLIT_RATIO='0.50'
+
+#bspc monitor -d 1 2 3 4
+bspc monitor -d 󰼏 󰼐 󰼑 󰼒
+
+bspc config border_width "${BORDER_WIDTH}"
+bspc config window_gap "${WINDOW_GAP}"
+bspc config split_ratio "${SPLIT_RATIO}"
+
+bspc config focused_border_color "$FOCUSED_BORDER"
+bspc config normal_border_color "$NORMAL_BORDER"
+bspc config active_border_color "$ACTIVE_BORDER"
+bspc config presel_feedback_color "$PRESEL_FEEDBACK"
+
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config paddingless_monocle true
+bspc config single_monocle false
+bspc config focus_follows_pointer true
+bspc config presel_feedback true
+
+bspc config bottom_padding 0
+bspc config top_padding 0
+
+bspc wm --adopt-orphans
+
+# window rules
+bspc rule -r *:*
+declare -a floating=(alacritty-float kitty-float Pcmanfm Thunar Onboard Yad 'Firefox:Places'
+  Viewnior feh Nm-connection-editor calamares Calamares xsane Xsane gnome-calculator galculator Galculator
+  fuse)
+for i in ${floating[@]}; do
+  bspc rule -a $i state=floating follow=on focus=on
+done
+
+bspc rule -a kittyd border=off state=floating
+
+# Applications
+killall -9 polybar picom xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc syncthing-gtk
+
+#xsettingsd --config="$BSPDIR"/xsettingsd &
+# pidof -q xbindkeys || { xbindkeys & }
+xset b off &
+xsetroot -cursor_name left_ptr &
+setxkbmap -model pc104 -layout pl &
+~/.fehbg &
+
+pidof -q xfce-polkit || { xfce-polkit & }
+pidof -q sxhkd || { sxhkd & }
+pidof -q picom || { picom --vsync --config ${HOME}/.config/picom/picom.conf & }
+pidof -q dunst || { dunst -conf ${HOME}/.config/dunst/dunstrc & }
+pidof -q vpnd || { vpnd & }
+pidof -q polybar || {
+  polybar -r top -config ${HOME}/.config/polybar/config.ini &
+  polybar -r bottom -config ${HOME}/.config/polybar/config.ini &
+}
+pidof -q clipcatd || { clipcatd & }
+pidof -q variety || { variety & }
+
+#{% if device.laptop %}
+#<yolk> #pidof -q snixembed || { snixembed & }
+#<yolk> #pidof -q iwgtk || { iwgtk -i & }
+#<yolk> pidof -q wg-systray || { wg-systray & }
+#<yolk> xhost +SI:localuser:$USER &
+#<yolk> pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
+#<yolk> sleep 5
+#<yolk> pidof -q syncthing-gtk || { syncthing-gtk -m & }
+#<yolk> xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
+#{% else %}
+xset -dpms &
+xset s off &
+openrgb -p wj.orp &
+#{% end %}
