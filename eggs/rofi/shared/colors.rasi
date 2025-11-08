@@ -1,11 +1,11 @@
 * {
     /* {# replace_color(theme.colors.bg) #} */
-    background:     #191919;
+    background:     #282A2E;
     background-alt: #262626;
     /* {# replace_color(theme.colors.fg) #} */
-    foreground:     #ABB2BD;
+    foreground:     #DDDDDD;
     selected:       #323c41;
     /* {# replace_color(theme.colors.fr) #} */
-    active:         #98C379;
+    active:         #F0C674;
     urgent:         #E06B74;
 }

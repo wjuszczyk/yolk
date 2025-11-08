@@ -71,7 +71,9 @@ confirm_exit() {
 confirm_run() {
   selected="$(confirm_exit)"
   if [[ "$selected" == "$yes" ]]; then
-    ${1} && ${2} && ${3}
+    ${1}
+    ${2}
+    ${3}
   else
     exit
   fi
@@ -90,7 +92,7 @@ run_cmd() {
   elif [[ "$1" == '--opt4' ]]; then
     confirm_run 'systemctl hibernate'
   elif [[ "$1" == '--opt5' ]]; then
-    confirm_run 'playerctl stop' 'systemctl reboot'
+    confirm_run 'playerctl stop ; systemctl reboot'
   elif [[ "$1" == '--opt6' ]]; then
     confirm_run 'playerctl stop' 'systemctl poweroff'
   fi

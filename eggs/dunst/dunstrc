@@ -346,22 +346,22 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     # {# replace_color(theme.colors.bg_l) #}
-    background = "#191919"
+    background = "#282A2E"
     # {# replace_color(theme.colors.fg_l) #}
     foreground = "#50545B"
     # {# replace_color(theme.colors.fr_l) #} 
-    frame_color = "#98C379"
+    frame_color = "#F0C674"
      timeout = 5
     # Icon for notifications with low urgency
     default_icon = dialog-information
 
 [urgency_normal]
     # {# replace_color(theme.colors.bg) #}
-    background = "#191919"
+    background = "#282A2E"
     # {# replace_color(theme.colors.fg) #}
-    foreground = "#ABB2BD"
+    foreground = "#DDDDDD"
     # {# replace_color(theme.colors.fr) #}
-    frame_color = "#98C379"
+    frame_color = "#F0C674"
 
     timeout = 10
     override_pause_level = 30

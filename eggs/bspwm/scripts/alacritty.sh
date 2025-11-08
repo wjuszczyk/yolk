@@ -5,10 +5,11 @@ CONFIG="$HOME/.config/alacritty/alacritty.toml"
 
 if [ "$1" == "--float" ]; then
   PARAMS=$(echo ${@} | awk '{gsub(/--float/, ""); print}')
+  echo $PARAMS
   if [ ${#PARAMS} -gt 0 ]; then
-    alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG" -e ${PARAMS}
+    alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG" -e "${PARAMS}"
   else
-    alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG"
+    echo alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG"
   fi
 elif [ "$1" == "--full" ]; then
   PARAMS=$(echo ${@} | awk '{gsub(/--full/, ""); print}')
