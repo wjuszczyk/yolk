@@ -1,5 +1,5 @@
 #!/bin/sh
-TERMINAL="kitty.sh"
+TERMINAL="alacritty.sh"
 cmd=$(dmenu_path | dmenu -i -p "Run:")
 [ -z "$cmd" ] && exit 0
 

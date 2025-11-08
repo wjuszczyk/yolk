@@ -5,16 +5,17 @@ super + x
 	xterm
 
 super + Return
-	kitty.sh
+	alacritty.sh -e zellij
 
 super + shift + Return
-  kitty.sh --float
+  alacritty.sh --float
 
 super + alt + Return
-  kitty.sh --full
+  alacritty.sh --full
 
 super + grave
-    tdrop -m -x 0 -y 0 -w 100% -h 1080 --class=kittyd --wm=bspwm kitty -c $HOME/.config/kitty/kitty.conf --class kittyd --override 'background_opacity=0.9'
+    tdrop -m -x 0 -y 0 -w 100% -h 1080 -a --wm=bspwm alacritty --class alacrittyd
+#    tdrop -m -x 0 -y 0 -w 100% -h 1080 --class=kittyd --wm=bspwm kitty -c $HOME/.config/kitty/kitty.conf --class kittyd --override 'background_opacity=0.9'
 
 # jgmenu
 alt + F1
@@ -43,8 +44,6 @@ super + q
 #super + {b,m,n,r,s,w,x}
 #	{rofi_bluetooth,bspmusic,nmd,rofi_asroot,rofi_screenshot,rofi_windows,rofi_powermenu}
 
-super + m
-  kitty.sh --full ncmpcpp
 
 # kill window
 ctrl + alt + Escape
@@ -204,3 +203,7 @@ XF86Audio{RaiseVolume,LowerVolume}
 # Mic Volume control
 XF86Audio{Mute,MicMute}
 	bspvolume{ --toggle, --toggle-mic}
+
+# ncmpcpp in fullscreen terminal
+super + m
+  pidof -q ncmpcpp && bspwinmask || alacritty.sh --full ncmpcpp

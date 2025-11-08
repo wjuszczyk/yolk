@@ -51,6 +51,12 @@ export let eggs = #{
       templates: ["kitty.conf"], 
       targets: "~/.config/kitty",
       main_file: "kitty.conf" },
+    alacritty: #{
+      enabled: true, 
+      strategy: "put", 
+      templates: ["alacritty.toml"], 
+      targets: "~/.config/alacritty",
+      main_file: "alacritty.toml" },
     polybar: #{
         enabled: true,
         startegy: "put",

@@ -5,13 +5,13 @@ export XDG_CURRENT_DESKTOP='bspwm'
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # {# replace_color(theme.colors.fr) #}
-FOCUSED_BORDER='#F0C674'
+FOCUSED_BORDER='#98C379'
 # {# replace_color(theme.colors.bg) #}
-NORMAL_BORDER_BORDER='#282A2E'
+NORMAL_BORDER_BORDER='#191919'
 # {# replace_color(theme.colors.bg) #}
-ACTIVE_BORDER='#282A2E'
+ACTIVE_BORDER='#191919'
 # {# replace_color(theme.colors.fr) #}
-PRESEL_FEEDBACK='#F0C674'
+PRESEL_FEEDBACK='#98C379'
 
 ## Bspwm appearance
 BORDER_WIDTH='1'
@@ -52,6 +52,7 @@ for i in ${floating[@]}; do
 done
 
 bspc rule -a kittyd border=off state=floating
+bspc rule -a alacrittyd border=off state=floating
 
 # Applications
 killall -9 polybar picom xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc syncthing-gtk
@@ -74,13 +75,13 @@ pidof -q polybar || {
 }
 pidof -q clipcatd || { clipcatd & }
 pidof -q variety || { variety & }
+pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
 
 #{% if device.laptop %}
 #<yolk> #pidof -q snixembed || { snixembed & }
 #<yolk> #pidof -q iwgtk || { iwgtk -i & }
 #<yolk> pidof -q wg-systray || { wg-systray & }
 #<yolk> xhost +SI:localuser:$USER &
-#<yolk> pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
 #<yolk> sleep 5
 #<yolk> pidof -q syncthing-gtk || { syncthing-gtk -m & }
 #<yolk> xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
