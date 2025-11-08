@@ -1,29 +1,24 @@
 #!/usr/bin/env bash
 export MPD_HOST="$XDG_RUNTIME_DIR/socket"
 
-CONFIG="$HOME/.config/alacritty/alacritty.toml"
-
 if [ "$1" == "--float" ]; then
-  PARAMS=$(echo ${@} | awk '{gsub(/--float/, ""); print}')
-  echo $PARAMS
-  if [ ${#PARAMS} -gt 0 ]; then
-    alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG" -e "${PARAMS}"
+  if [ ${#@} -gt 1 ]; then
+    alacritty --class 'alacritty-float,alacritty-float' -e ${@/--float/}
   else
-    echo alacritty --class 'alacritty-float,alacritty-float' --config-file "$CONFIG"
+    alacritty --class 'alacritty-float,alacritty-float'
   fi
 elif [ "$1" == "--full" ]; then
-  PARAMS=$(echo ${@} | awk '{gsub(/--full/, ""); print}')
-  if [ ${#PARAMS} -gt 0 ]; then
-    alacritty --class 'alacritty-fullscreen,alacritty-fullscreen' --config-file "$CONFIG" \
+  if [ ${#@} -gt 1 ]; then
+    alacritty --class 'alacritty-fullscreen,alacritty-fullscreen' \
       -o window.startup_mode="'Fullscreen'" \
       window.padding.x=10 window.padding.y=10 \
-      window.opacity=0.95 font.size=14 -e ${PARAMS}
+      window.opacity=0.95 font.size=14 -e ${@/--full/}
   else
-    alacritty --class 'alacritty-fullscreen,alacritty-fullscreen' --config-file "$CONFIG" \
+    alacritty --class 'alacritty-fullscreen,alacritty-fullscreen' \
       -o window.startup_mode="'Fullscreen'" \
       window.padding.x=10 window.padding.y=10 \
       window.opacity=0.95 font.size=14
   fi
 else
-  alacritty --config-file "$CONFIG" ${@}
+  alacritty ${@}
 fi
