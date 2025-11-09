@@ -84,8 +84,8 @@ super + ctrl + {m,x,y,z}
 	bspc node -g {marked,locked,sticky,private}
 
 # Hide/Unhide Window
-#super + shift + h
-#	bspwinmask
+super + shift + h
+	bspwinmask
 
 #
 # focus/swap

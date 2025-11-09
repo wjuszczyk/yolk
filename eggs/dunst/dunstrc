@@ -242,7 +242,7 @@
 
     # Paths to default icons (only necessary when not using recursive icon lookup)
     #icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
-
+    icon_path = /usr/share/icons/Papirus/96x96/devices/:/usr/share/icons/Papirus/48x48/status/:/usr/share/icons/Papirus/96x96/apps/
     ### History ###
 
     # Should a notification popped up from history be sticky or timeout
