@@ -49,7 +49,7 @@ rofi_cmd() {
 # Pass variables to rofi dmenu
 run_rofi() {
   #echo -e "$option_1\n$option_2\n$option_3\n$option_4\n$option_5\n$option_6" | rofi_cmd
-  echo -e "$option_1\n$option_2\n$option_5\n$option_6" | rofi_cmd
+  echo -e "$option_1\n$option_2\n$option_3\n$option_5\n$option_6" | rofi_cmd
 }
 
 # Confirmation CMD
@@ -87,8 +87,7 @@ run_cmd() {
   elif [[ "$1" == '--opt2' ]]; then
     confirm_run 'bspc quit'
   elif [[ "$1" == '--opt3' ]]; then
-    confirm_run 'playerctl pause' 'pulsemixer --mute' 'i3lock-fancy -f IBM-Plex-Mono-Regular -- maim'
-    #confirm_run 'pulsemixer --mute' 'betterlockscreen --suspend'
+    confirm_run 'playerctl pause' 'i3lock-fancy -f IBM-Plex-Mono-Regular -- maim' 'systemctl suspend'
   elif [[ "$1" == '--opt4' ]]; then
     confirm_run 'systemctl hibernate'
   elif [[ "$1" == '--opt5' ]]; then
