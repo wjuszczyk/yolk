@@ -15,7 +15,7 @@ PRESEL_FEEDBACK='#98C379'
 
 ## Bspwm appearance
 BORDER_WIDTH='1'
-WINDOW_GAP='5'
+WINDOW_GAP='2'
 SPLIT_RATIO='0.50'
 
 #bspc monitor -d 1 2 3 4

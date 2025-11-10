@@ -235,6 +235,11 @@ keybinds clear-defaults=true {
           cwd "/home/wj/.config/zellij/"
           };
       }
+      bind "Alt f" { 
+        LaunchPlugin "filepicker" {
+          close_on_selection true
+          };
+      }
     }
 }
 
