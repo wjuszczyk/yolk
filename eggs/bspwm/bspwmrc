@@ -79,15 +79,15 @@ pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
 # pidof -q mpd || { mpd & }
 # pidof -q mpdris2-rs || { MPD_HOST=/run/usr/1000/socket mpdris2-rs & }
 #{% if device.laptop %}
-#<yolk> #pidof -q snixembed || { snixembed & }
-#<yolk> #pidof -q iwgtk || { iwgtk -i & }
-#<yolk> pidof -q wg-systray || { wg-systray & }
-#<yolk> xhost +SI:localuser:$USER &
-#<yolk> sleep 5
-#<yolk> pidof -q syncthing-gtk || { syncthing-gtk -m & }
-#<yolk> xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
+#pidof -q snixembed || { snixembed & }
+#pidof -q iwgtk || { iwgtk -i & }
+pidof -q wg-systray || { wg-systray & }
+xhost +SI:localuser:$USER &
+sleep 5
+pidof -q syncthing-gtk || { syncthing-gtk -m & }
+xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
 #{% else %}
-xset -dpms &
-xset s off &
-openrgb -p wj.orp &
+#<yolk> xset -dpms &
+#<yolk> xset s off &
+#<yolk> openrgb -p wj.orp &
 #{% end %}

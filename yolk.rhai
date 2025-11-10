@@ -1,5 +1,5 @@
 export const device = #{
-    laptop: SYSTEM.hostname == "lenovo",
+    laptop: SYSTEM.hostname == "Lenovo",
 };
 
 const themes = #{
