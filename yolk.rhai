@@ -32,44 +32,83 @@ export const theme = #{
 };
 
 export let eggs = #{
-  bspwm: #{
-      enabled: true,
-      strategy: "put",
-      templates: ["bspwmrc"],
-      targets: "~/.config/bspwm",
-      main_file: "bspwmrc",
+  alacritty: #{
+    enabled: true, 
+    strategy: "put", 
+    templates: ["alacritty.toml"], 
+    targets: "~/.config/alacritty",
+    main_file: "alacritty.toml"
     },
-    dunst: #{
-        enabled: true,
-        strategy: "put",
-        templates: ["dunstrc"],
-        targets: "~/.config/dunst",
+  bspwm: #{
+    enabled: true,
+    strategy: "put",
+    templates: ["bspwmrc"],
+    targets: "~/.config/bspwm",
+    main_file: "bspwmrc",
+    },
+  clipcat: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/clipcat",
+    },
+  dunst: #{
+    enabled: true,
+    strategy: "put",
+    templates: ["dunstrc"],
+    targets: "~/.config/dunst",
+    },
+  jgmenu: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/jgmenu",
+    main_file: "jgmenurc",
+    },
+  kitty: #{
+    enabled: true, 
+    strategy: "put", 
+    templates: ["kitty.conf"], 
+    targets: "~/.config/kitty",
+    main_file: "kitty.conf"
+    },
+  picom: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/picom",
+    main_file: "picom.conf"
+    },
+  polybar: #{
+    enabled: true,
+    startegy: "put",
+    templates: [ "colors.ini", "config.ini", "modules.ini" ],
+    targets: "~/.config/polybar",
+    main_file: "config.ini",
+    },
+  rofi: #{
+    enabled: true,
+    strategy: "put",
+    templates: ["shared/colors.rasi"],
+    targets: "~/.config/rofi",
+    main_file: "config.rasi"
+    },
+  sxhkd: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/sxhkd",
+    main_file: "sxhkdrc"
+    },
+  zellij: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/zellij",
+    main_file: "config.kdl",
+    },
+  zsh: #{
+    enabld:true,
+    strategy: "put",
+    targets: #{
+        ".zshrc": "~/.zshrc",
       },
-    kitty: #{
-      enabled: true, 
-      strategy: "put", 
-      templates: ["kitty.conf"], 
-      targets: "~/.config/kitty",
-      main_file: "kitty.conf" },
-    alacritty: #{
-      enabled: true, 
-      strategy: "put", 
-      templates: ["alacritty.toml"], 
-      targets: "~/.config/alacritty",
-      main_file: "alacritty.toml" },
-    polybar: #{
-        enabled: true,
-        startegy: "put",
-        templates: [ "colors.ini", "config.ini", "modules.ini" ],
-        targets: "~/.config/polybar",
-        main_file: "config.ini",
-      },
-    picom: #{enabled: true, strategy: "put", targets: "~/.config/picom", main_file: "picom.conf" },
-    rofi: #{
-      enabled: true,
-      strategy: "put",
-      templates: ["shared/colors.rasi"],
-      targets: "~/.config/rofi",
-      main_file: "config.rasi" },
-    sxhkd: #{enabled: true, strategy: "put", targets: "~/.config/sxhkd", main_file: "sxhkdrc" },
-  };
+    },
+};
+
+

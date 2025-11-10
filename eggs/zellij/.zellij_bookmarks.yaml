@@ -1,0 +1,12 @@
+vars: {}
+cmds: {}
+bookmarks:
+- name: "Yolk egg definition"
+  desc: "New egg entry in Yolk config"
+  cmds:
+  - "NAME: #{\nenabled: true,\nstrategy: \"put\",\ntemplates: [\"FILE\"],\ntargets: \"~/.config/NAME\",\nfile: \"NAMERC\",\n},"
+  exec: false
+  labels:
+  - "yolk"
+
+

@@ -1,0 +1,6 @@
+^sep()
+Lock,betterlockscreen --lock,system-lock-screen
+Exit,^checkout(exit),system-shutdown
+^tag(exit)
+Reboot,systemctl -i reboot,system-reboot
+Poweroff,systemctl -i poweroff,system-shutdown

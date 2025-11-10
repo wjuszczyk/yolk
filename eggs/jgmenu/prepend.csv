@@ -1,0 +1,4 @@
+Terminal,kitty,utilities-terminal
+Browser,floorp,floorp
+File manager,pcmanfm,system-file-manager
+^sep()
