@@ -5,13 +5,13 @@ export XDG_CURRENT_DESKTOP='bspwm'
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # {# replace_color(theme.colors.fr) #}
-FOCUSED_BORDER='#F0C674'
+FOCUSED_BORDER='#98C379'
 # {# replace_color(theme.colors.bg) #}
-NORMAL_BORDER_BORDER='#282A2E'
+NORMAL_BORDER_BORDER='#191919'
 # {# replace_color(theme.colors.bg) #}
-ACTIVE_BORDER='#282A2E'
+ACTIVE_BORDER='#191919'
 # {# replace_color(theme.colors.fr) #}
-PRESEL_FEEDBACK='#F0C674'
+PRESEL_FEEDBACK='#98C379'
 
 ## Bspwm appearance
 BORDER_WIDTH='1'
