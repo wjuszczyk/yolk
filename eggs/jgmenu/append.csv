@@ -2,5 +2,6 @@
 Lock,betterlockscreen --lock,system-lock-screen
 Exit,^checkout(exit),system-shutdown
 ^tag(exit)
+Suspend,systemctl suspend,system-suspend
 Reboot,systemctl -i reboot,system-reboot
 Poweroff,systemctl -i poweroff,system-shutdown
