@@ -20,7 +20,7 @@
 
 [terminal.shell]
 program = "/usr/bin/zsh"
-args = ["-l"]
+args = ["-l", "-c", "zellij"]
 
 
 # ENV

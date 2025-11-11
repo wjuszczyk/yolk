@@ -5,7 +5,7 @@ super + x
 	xterm
 
 super + Return
-	alacritty.sh -e zellij
+  alacritty.sh
 
 super + shift + Return
   alacritty.sh --float
@@ -41,8 +41,8 @@ super + q
   rofi_powermenu
 
 # Rofi Menus/Applets
-#super + {b,m,n,r,s,w,x}
-#	{rofi_bluetooth,bspmusic,nmd,rofi_asroot,rofi_screenshot,rofi_windows,rofi_powermenu}
+#super + {b,n,r,s,w,x}
+#	{rofi_bluetooth,nmd,rofi_asroot,rofi_screenshot,rofi_windows,rofi_powermenu}
 
 
 # kill window
@@ -206,4 +206,4 @@ XF86Audio{Mute,MicMute}
 
 # ncmpcpp in fullscreen terminal
 super + m
-  pidof -q ncmpcpp && bspwinmask || alacritty.sh --full ncmpcpp
+  pidof -q ncmpcpp && bspwinmask || alacritty.sh --full -e ncmpcpp
