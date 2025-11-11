@@ -76,7 +76,9 @@ pidof -q polybar || {
 pidof -q clipcatd || { clipcatd & }
 pidof -q variety || { variety & }
 pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
+
 xhost +SI:localuser:$USER &
+exec xautolock -time 5 -locker 'i3lock-fancy -f IBM-Plex-Mono-Regular -n -- maim' -killtime 220 -killer "systemctl suspend" -corners +00- -detectsleep &
 
 # pidof -q mpd || { mpd & }
 # pidof -q mpdris2-rs || { MPD_HOST=/run/usr/1000/socket mpdris2-rs & }

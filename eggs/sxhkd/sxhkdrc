@@ -34,8 +34,8 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # lock screen
-ctr + alt + l
-  i3lock-fancy -f IBM-Plex-Mono -- maim
+ctrl + alt + l
+  i3lock-fancy -f IBM-Plex-Mono-Regular -n -- maim
 
 super + q 
   rofi_powermenu

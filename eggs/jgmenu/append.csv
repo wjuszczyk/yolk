@@ -1,5 +1,5 @@
 ^sep()
-Lock,betterlockscreen --lock,system-lock-screen
+Lock,i3lock-fancy -f IBM-Plex-Mono-Regular -n -- maim,system-lock-screen
 Exit,^checkout(exit),system-shutdown
 ^tag(exit)
 Suspend,systemctl suspend,system-suspend
