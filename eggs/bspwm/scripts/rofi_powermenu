@@ -87,7 +87,7 @@ run_cmd() {
   elif [[ "$1" == '--opt2' ]]; then
     confirm_run 'bspc quit'
   elif [[ "$1" == '--opt3' ]]; then
-    confirm_run 'playerctl pause' 'i3lock-fancy -n -f IBM-Plex-Mono-Regular -- maim' 'systemctl suspend'
+    confirm_run 'playerctl pause' 'systemctl suspend'
   elif [[ "$1" == '--opt4' ]]; then
     confirm_run 'systemctl hibernate'
   elif [[ "$1" == '--opt5' ]]; then
