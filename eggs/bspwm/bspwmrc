@@ -55,7 +55,7 @@ bspc rule -a kittyd border=off state=floating
 bspc rule -a alacrittyd border=off state=floating
 
 # Applications
-killall -9 polybar picom xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc syncthing-gtk
+killall -9 polybar picom xsettingsd sxhkd dunst ksuperkey xfce4-power-manager bspc syncthing-gtk xautolock
 
 #xsettingsd --config="$BSPDIR"/xsettingsd &
 # pidof -q xbindkeys || { xbindkeys & }
