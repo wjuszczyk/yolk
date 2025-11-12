@@ -155,6 +155,12 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
+do_yolk() {
+  yolk git add --all
+  yolk git commit -m $1
+  yolk git push
+}
+
 export KITTY_CONFIG_DIRECTORY=~/.config/bspwm/kitty
 export MPD_HOST="$XDG_RUNTIME_DIR/socket"
 
