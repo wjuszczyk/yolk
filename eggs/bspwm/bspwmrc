@@ -75,14 +75,13 @@ pidof -q polybar || {
 }
 pidof -q clipcatd || { clipcatd & }
 pidof -q variety || { variety & }
-pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
 
 xhost +SI:localuser:$USER &
-exec xautolock -time 5 -locker /home/wj/bin/locker.sh -killtime 20 -killer "systemctl suspend" -corners +00- -detectsleep &
 
 # pidof -q mpd || { mpd & }
 # pidof -q mpdris2-rs || { MPD_HOST=/run/usr/1000/socket mpdris2-rs & }
 #{% if device.laptop %}
+#<yolk> pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
 #<yolk> #pidof -q snixembed || { snixembed & }
 #<yolk> #pidof -q iwgtk || { iwgtk -i & }
 #<yolk> pidof -q wg-systray || { wg-systray & }
@@ -90,6 +89,7 @@ exec xautolock -time 5 -locker /home/wj/bin/locker.sh -killtime 20 -killer "syst
 #<yolk> pidof -q syncthing-gtk || { syncthing-gtk -m & }
 #<yolk> xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
 #{% else %}
+exec xautolock -time 5 -locker /home/wj/bin/locker.sh -killtime 20 -killer "systemctl suspend" -corners +00- -detectsleep &
 xset -dpms &
 xset s off &
 openrgb -p wj.orp &
