@@ -114,6 +114,14 @@ export let eggs = #{
         ".zshrc": "~/.zshrc",
       },
     },
+  scripts: #{
+    enabled: true,
+    strategy: "put",
+    targets: #{
+      "locker.sh": "~/bin/locker.sh",
+      "rmshit.py": "~/bin/rmshit.py",
+    }
+  },
 };
 
 
