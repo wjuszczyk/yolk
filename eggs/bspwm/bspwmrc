@@ -7,7 +7,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # {# replace_color(theme.colors.fr) #}
 FOCUSED_BORDER='#98C379'
 # {# replace_color(theme.colors.bg) #}
-NORMAL_BORDER_BORDER='#191919'
+NORMAL_BORDER='#191919'
 # {# replace_color(theme.colors.bg) #}
 ACTIVE_BORDER='#191919'
 # {# replace_color(theme.colors.fr) #}
@@ -64,11 +64,11 @@ xsetroot -cursor_name left_ptr &
 setxkbmap -model pc104 -layout pl &
 ~/.fehbg &
 
-pidof -q xfce-polkit || { xfce-polkit & }
+pidof -q xfce-polkit || { /usr/lib/xfce-polkit/xfce-polkit & }
 pidof -q sxhkd || { sxhkd & }
 pidof -q picom || { picom --vsync --config ${HOME}/.config/picom/picom.conf & }
 pidof -q dunst || { dunst -conf ${HOME}/.config/dunst/dunstrc & }
-pidof -q vpnd || { vpnd & }
+#pidof -q vpnd || { vpnd & }
 pidof -q polybar || {
   polybar -r top -config ${HOME}/.config/polybar/config.ini &
   polybar -r bottom -config ${HOME}/.config/polybar/config.ini &
