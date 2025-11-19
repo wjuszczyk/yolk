@@ -11,7 +11,8 @@ fi
 updates=$((updates_arch + updates_aur))
 
 if [ "$updates" -gt 0 ]; then
-  echo " P:$updates_arch Y:$updates_aur"
+  # {# replace_color(theme.colors.fr) #}
+  echo "%{F#98C379} %{F-}P:$updates_arch Y:$updates_aur"
 else
   echo ""
 fi

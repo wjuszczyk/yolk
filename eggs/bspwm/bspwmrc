@@ -88,6 +88,7 @@ xhost +SI:localuser:$USER &
 #<yolk> sleep 5
 #<yolk> pidof -q syncthing-gtk || { syncthing-gtk -m & }
 #<yolk> xinput disable $(xinput list | grep Touchpad | awk '{print $6}' | cut -d '=' -f2) &
+#<yolk> light -A 100 &
 #{% else %}
 exec xautolock -time 5 -locker /home/wj/bin/locker.sh -killtime 20 -killer "systemctl suspend" -corners +00- -detectsleep &
 xset -dpms &
