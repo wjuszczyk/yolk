@@ -73,16 +73,16 @@ pidof -q polybar || {
   polybar -r top -config ${HOME}/.config/polybar/config.ini &
   polybar -r bottom -config ${HOME}/.config/polybar/config.ini &
 }
+pidof -q snixembed || { snixembed & }
 pidof -q clipcatd || { clipcatd & }
 pidof -q variety || { variety & }
-
+pidof -q solaar || { solaar -w hide -b symbolic & }
 xhost +SI:localuser:$USER &
 
 # pidof -q mpd || { mpd & }
 # pidof -q mpdris2-rs || { MPD_HOST=/run/usr/1000/socket mpdris2-rs & }
 #{% if device.laptop %}
 #<yolk> pidof -q xfce4-power-manager >/dev/null || xfce4-power-manager &
-#<yolk> #pidof -q snixembed || { snixembed & }
 #<yolk> #pidof -q iwgtk || { iwgtk -i & }
 #<yolk> pidof -q wg-systray || { wg-systray & }
 #<yolk> sleep 5

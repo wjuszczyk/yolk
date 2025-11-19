@@ -34,7 +34,7 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # lock screen
-ctrl + alt + l
+super + l
   i3lock-fancy -f IBM-Plex-Mono-Regular -n -- maim
 
 super + q 
@@ -64,7 +64,7 @@ super + {_,shift + }c
 #    bspc node -c && bspc desktop -f last
 
 # alternate between the tiled and monocle layout
-super + l
+super + ctrl + space
 	bspc desktop -l next
 
 # swap the current node and the biggest window
@@ -203,6 +203,12 @@ XF86Audio{RaiseVolume,LowerVolume}
 # Mic Volume control
 XF86Audio{Mute,MicMute}
 	bspvolume{ --toggle, --toggle-mic}
+
+XF86Calculator
+  galculator
+
+Menu
+  ~/bin/jgmenu_create.sh >/dev/null 2>&1 &
 
 # ncmpcpp in fullscreen terminal
 super + m
