@@ -28,7 +28,8 @@ args = ["-l", "-c", "zellij"]
 # Example:
 
 [env]
-TERM = "alacritty"
+#TERM = "alacritty"
+TERM="xterm-256color"
 WINIT_X11_SCALE_FACTOR = "1.0"
 
 #[env]
