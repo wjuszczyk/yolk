@@ -173,6 +173,13 @@ alias orphans='yay -Qdtq | yay -Rns -'
 alias orphan='yay -Qdtq'
 alias mm='while true; do X=960; Y=540; xdotool click 1; for i in $(seq 1 5); do xdotool mousemove $X $Y; sleep 1; X=$(( $X + 50 )); Y=$(( $Y -50 )); done; done'
 alias less='less -FRX'
+
+function yf() {
+  yay -Ss $1 |
+  grep -v "^ " |
+  fzf -e --multi --literal --ansi --reverse --preview="yay -Si {1}"
+}
+
 function packages-by-date() {
   LC_ALL=en_EN.UTF-8 pacman -Qi |
   grep '^\(Name\|Install Date\)\s*:' |
