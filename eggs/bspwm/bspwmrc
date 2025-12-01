@@ -93,5 +93,5 @@ xhost +SI:localuser:$USER &
 exec xautolock -time 5 -locker /home/wj/bin/locker.sh -killtime 20 -killer "systemctl suspend" -corners +00- -detectsleep &
 xset -dpms &
 xset s off &
-openrgb -p wj.orp &
+#openrgb -p wj.orp &
 #{% end %}
