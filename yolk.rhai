@@ -61,9 +61,6 @@ export let eggs = #{
     enabled: true,
     strategy: "put",
     targets: #{
-      "append.csv": "~/.config/jgmenu/append.csv",
-      "jgmenurc": "~/.config/jgmenu/jgmenurc",
-      "prepend.csv": "~/.config/jgmenu/prepend.csv",
       "jgmenu_create.sh": "~/bin/jgmenu_create.sh",
     },
     main_file: "jgmenurc",
