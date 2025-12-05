@@ -78,6 +78,7 @@ pidof -q clipcatd || { clipcatd & }
 pidof -q variety || { variety & }
 pidof -q solaar || { solaar -w hide -b symbolic & }
 xhost +SI:localuser:$USER &
+# fix for Code
 
 # pidof -q mpd || { mpd & }
 # pidof -q mpdris2-rs || { MPD_HOST=/run/usr/1000/socket mpdris2-rs & }

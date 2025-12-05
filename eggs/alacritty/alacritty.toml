@@ -499,7 +499,7 @@ live_config_reload = true
 # "~/.config/alacritty/keybindings.toml",
 # ]
 
-import = []
+import = ["colors.toml"]
 
 # ipc_socket = true | false # (unix only)
 # Offer IPC using alacritty msg

@@ -112,9 +112,9 @@
 
     # Defines color of the frame around the notification window.
     #frame_color = "#282A2E"
-    frame_color = "#adc6ff" 
-    highlight = "#adc6ff" 
-    separator_color= "#8e9099"
+    frame_color = "{{colors.primary.default.hex}}" 
+    highlight = "{{colors.primary.default.hex}}" 
+    separator_color= "{{colors.outline.default.hex}}"
 
     # Size of gap to display between notifications - requires a compositor.
     # If value is greater than 0, separator_height will be ignored and a border
@@ -357,9 +357,9 @@
     timeout = 5
     # Icon for notifications with low urgency
     default_icon = dialog-information
-    background = "#111318"
-    foreground = "#e2e2e9"
-    highlight = "#2b4678"
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    highlight = "{{colors.primary_container.default.hex}}"
 
 [urgency_normal]
     # {# replace_color(theme.colors.bg) #}
@@ -368,9 +368,9 @@
     #foreground = "#ABB2BD"
     # {# replace_color(theme.colors.fr) #}
     #frame_color = "#98C379"
-    background = "#111318"
-    foreground = "#e2e2e9"
-    highlight = "#2b4678"
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    highlight = "{{colors.primary_container.default.hex}}"
 
     timeout = 10
     override_pause_level = 30
@@ -389,9 +389,9 @@
     override_pause_level = 60
     # Icon for notifications with critical urgency
     default_icon = dialog-warning
-    background = "#111318"
-    foreground = "#e2e2e9"
-    highlight = "#ffb4ab"
+    background = "{{colors.surface.default.hex}}"
+    foreground = "{{colors.on_surface.default.hex}}"
+    highlight = "{{colors.error.default.hex}}"
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

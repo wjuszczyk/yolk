@@ -75,6 +75,12 @@ export let eggs = #{
     targets: "~/.config/kitty",
     main_file: "kitty.conf"
     },
+  matugen: #{
+    enabled: true,
+    strategy: "put",
+    targets: "~/.config/matugen",
+    main_file: "config.toml"
+    },
   picom: #{
     enabled: true,
     strategy: "put",
