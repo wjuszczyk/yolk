@@ -173,7 +173,8 @@ alias orphans='yay -Qdtq | yay -Rns -'
 alias orphan='yay -Qdtq'
 alias mm='while true; do X=960; Y=540; xdotool click 1; for i in $(seq 1 5); do xdotool mousemove $X $Y; sleep 1; X=$(( $X + 50 )); Y=$(( $Y -50 )); done; done'
 alias less='less -FRX'
-
+alias k1="setxkbmap -model pc104 -variant legacy"
+alias k2="setxkbmap -model pc104 -variant dvorak"
 function yf() {
   yay -Ss $1 |
   grep -v "^ " |
