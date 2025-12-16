@@ -143,14 +143,16 @@ alias vim='nvim'
 # ls
 #alias l='ls -lh'
 #alias ll='ls -lah'
-alias l='eza -l --group-directories-first'
-alias ll='eza -lA --group-directories-first'
 #alias la='ls -A'
+#alias lm='ls -m'
+#alias lr='ls -R'
+#alias lg='ls -l --group-directories-first'
+alias l='eza -ls type'
+alias ll='eza -lAs type'
 alias la='eza -a --group-directories-first'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
+alias l.='eza -ld .* -s type'
 alias cat='bat -p'
+
 # git
 alias gcl='git clone --depth 1'
 alias gi='git init'
@@ -167,17 +169,26 @@ do_yolk() {
 export KITTY_CONFIG_DIRECTORY=~/.config/bspwm/kitty
 export MPD_HOST="$XDG_RUNTIME_DIR/socket"
 
+# SSH
 alias gcp='ssh wj@35.227.88.224'
 alias oracle='ssh ubuntu@140.238.222.177'
 alias repeater='sshpass -f $HOME/.ssh/repeater.pass ssh -i $HOME/.ssh/id_rsa -p 2222 192.168.50.10'
 alias router="bash -c 'ssh -i $HOME/.ssh/id_rsa -p 2222 192.168.50.1'"
 alias smb='sudo mount.smb3 //192.168.50.1/Samba /mnt/smb -o credentials=$HOME/.smbpass,uid=1000,gid=1000,rw'
+
+# arch
 alias orphans='yay -Qdtq | yay -Rns -'
 alias orphan='yay -Qdtq'
+
+# mousemove
 alias mm='while true; do X=960; Y=540; xdotool click 1; for i in $(seq 1 5); do xdotool mousemove $X $Y; sleep 1; X=$(( $X + 50 )); Y=$(( $Y -50 )); done; done'
+
 alias less='less -FRX'
+
+# Dvorak
 alias k1="setxkbmap -model pc104 -variant legacy"
 alias k2="setxkbmap -model pc104 -variant dvorak"
+
 function yf() {
   yay -Ss $1 |
   grep -v "^ " |
