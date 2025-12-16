@@ -2,3 +2,7 @@
 /.deployed_cache
 /.yolk_git
 /eggs/jgmenu/apps-menu.csv
+/eggs/alacritty/colors.toml
+/eggs/kitty/colors.conf
+/eggs/polybar/colors.ini
+/eggs/rofi/colors.rasi

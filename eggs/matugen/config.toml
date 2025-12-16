@@ -51,3 +51,8 @@ output_path = '~/.config/yazi/theme.toml'
 [templates.polybar]
 input_path = '~/.config/matugen/templates/polybar-colors.ini'
 output_path = '~/.config/polybar/colors.ini'
+
+[templates.bswpm]
+input_path = '~/.config/matugen/templates/bspwm-colors'
+output_path = '~/.config/bspwm/bspwm-colors'
+post_hook = 'bspc wm -r'

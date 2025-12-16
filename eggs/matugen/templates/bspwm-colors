@@ -1,0 +1,6 @@
+FOCUSED_BORDER='{{colors.primary.default.hex}}'
+NORMAL_BORDER='{{colors.surface.default.hex}}'
+ACTIVE_BORDER='{{colors.surface.default.hex}}'
+PRESEL_FEEDBACK='{{colors.primary.default.hex}}'
+
+
