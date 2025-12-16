@@ -33,9 +33,9 @@ export const theme = #{
 
 export let eggs = #{
   alacritty: #{
-    enabled: true, 
-    strategy: "put", 
-    templates: ["alacritty.toml"], 
+    enabled: true,
+    strategy: "put",
+    templates: ["alacritty.toml"],
     targets: "~/.config/alacritty",
     main_file: "alacritty.toml"
     },
