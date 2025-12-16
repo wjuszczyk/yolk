@@ -141,13 +141,16 @@ alias ohmyzsh="thunar ~/.oh-my-zsh"
 
 alias vim='nvim'
 # ls
-alias l='ls -lh'
-alias ll='ls -lah'
-alias la='ls -A'
+#alias l='ls -lh'
+#alias ll='ls -lah'
+alias l='eza -l --group-directories-first'
+alias ll='eza -lA --group-directories-first'
+#alias la='ls -A'
+alias la='eza -a --group-directories-first'
 alias lm='ls -m'
 alias lr='ls -R'
 alias lg='ls -l --group-directories-first'
-
+alias cat='bat -p'
 # git
 alias gcl='git clone --depth 1'
 alias gi='git init'
